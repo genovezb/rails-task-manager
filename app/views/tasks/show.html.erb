@@ -6,6 +6,11 @@
   <%= link_to 'Edit', edit_task_path(@task) %>
 </p>
 
+
 <p>
-  <%= link_to 'Remove', task_path, method: :delete %>
+  <%= link_to "Delete #{@task.title}",
+            task_path(@task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
 </p>
+
